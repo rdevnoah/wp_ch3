@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>마진과 패딩</title>
+<style type="text/css">
+* { margin:0; padding:0}
+body {
+	font-family: "돋움", "맑은 고딕";
+	font-size: 0.8em;
+	color: #333;	
+}
+
+.box1 {
+	border:1px solid #666;
+	width:300px;
+	background-color: #FFC;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	padding-left: 40px;
+	
+	padding: 10px 40px 60px 100px;
+	
+	padding: 100px;
+	
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+}
+
+
+</style>
+
+<script>
+
+window.onload = function(){
+	var el = document.getElementById('box1');
+	var margin = parseInt(el.style.marginTop);
+ 	
+	var intervalId = setInterval(function(){
+ 		
+ 		margin -= 5; 
+		el.style.marginTop = margin + "px";
+		console.log(parseInt(el.style.marginTop, 10));
+		if(margin < -100){
+			clearInterval(intervalId);
+		}
+	}, 1000)
+	
+}
+
+//	setTimeout
+</script>
+
+</head>
+
+<body>
+<div id="box1" class="box1" style="margin-top: 10px">
+CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
+</div>
+
+
+</body>
+</html>
